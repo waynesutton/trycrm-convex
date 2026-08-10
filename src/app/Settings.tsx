@@ -187,7 +187,7 @@ function IntegrationsSection() {
           Every key is explained in the{" "}
           <Link
             to="/docs#environment-variables"
-            className="text-accent hover:underline"
+            className="text-accent underline-offset-2 hover:underline"
           >
             environment variables guide
           </Link>
@@ -218,7 +218,7 @@ function IntegrationsSection() {
           add keys in the{" "}
           <a
             href="https://dashboard.convex.dev"
-            className="text-accent hover:underline"
+            className="text-accent underline-offset-2 hover:underline"
           >
             Convex dashboard
           </a>{" "}
@@ -226,12 +226,12 @@ function IntegrationsSection() {
           first. See{" "}
           <Link
             to="/docs#environment-variables"
-            className="text-accent hover:underline"
+            className="text-accent underline-offset-2 hover:underline"
           >
             environment variables
           </Link>{" "}
           for the full key list and{" "}
-          <Link to="/docs#deploy" className="text-accent hover:underline">
+          <Link to="/docs#deploy" className="text-accent underline-offset-2 hover:underline">
             deploying to production
           </Link>{" "}
           for when <Mono>--prod</Mono> matters.
@@ -332,7 +332,7 @@ function SlackSection() {
           deal stage moves, task completions, and agent run summaries. Off
           by default; nothing posts until you turn it on and connect Slack.
           The full setup walkthrough is in{" "}
-          <Link to="/docs#slack" className="text-accent hover:underline">
+          <Link to="/docs#slack" className="text-accent underline-offset-2 hover:underline">
             Slack: notifications and the bot
           </Link>
           .
@@ -523,7 +523,7 @@ function SlackSection() {
           task, /crm activity. Needs SLACK_BOT_TOKEN and
           SLACK_SIGNING_SECRET plus a slash command pointed at this
           deployment; the{" "}
-          <Link to="/docs#slack" className="text-accent hover:underline">
+          <Link to="/docs#slack" className="text-accent underline-offset-2 hover:underline">
             docs
           </Link>{" "}
           walk through it. Only workspace members can act. The bot matches
@@ -637,7 +637,7 @@ function EmailSection() {
           agents a persistent inbox with threads synced into Convex. The
           switch works even before keys are set; sending stays off until the
           selected provider is configured. Setup steps for both are in{" "}
-          <Link to="/docs#email" className="text-accent hover:underline">
+          <Link to="/docs#email" className="text-accent underline-offset-2 hover:underline">
             email: Resend and AgentMail
           </Link>
           .
@@ -738,7 +738,7 @@ function AiSection() {
         these keys ship by default: pick a provider, set its key on the
         deployment, and the chat starts reasoning. Until then it answers
         with the exact key it needs. See{" "}
-        <Link to="/docs#ai-providers" className="text-accent hover:underline">
+        <Link to="/docs#ai-providers" className="text-accent underline-offset-2 hover:underline">
           AI providers
         </Link>{" "}
         for the setup steps.
@@ -836,7 +836,7 @@ function IntegrationRow({
           {detail}{" "}
           <Link
             to={`/docs#${docsId}`}
-            className="whitespace-nowrap text-accent hover:underline"
+            className="whitespace-nowrap text-accent underline-offset-2 hover:underline"
           >
             Setup guide
           </Link>

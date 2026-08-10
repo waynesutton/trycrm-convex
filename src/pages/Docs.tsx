@@ -59,12 +59,12 @@ function K({ children }: { children: string }) {
   );
 }
 
+const LINK_CLASS =
+  "text-accent underline decoration-edge underline-offset-2 hover:decoration-accent";
+
 function Ext({ href, children }: { href: string; children: ReactNode }) {
   return (
-    <a
-      href={href}
-      className="text-accent underline decoration-edge underline-offset-2 hover:decoration-accent"
-    >
+    <a href={href} className={LINK_CLASS}>
       {children}
     </a>
   );
@@ -314,7 +314,7 @@ export function Docs() {
 
           <Section id="using-the-app" title="Using the app">
             <p>
-              Open <Link to="/app" className="text-accent underline decoration-edge underline-offset-2">the demo</Link>{" "}
+              Open <Link to="/app" className={LINK_CLASS}>the demo</Link>{" "}
               and you land on the dashboard. Here is what each section does.
             </p>
             <ul className="flex list-disc flex-col gap-2 pl-5">
@@ -370,7 +370,7 @@ export function Docs() {
                 timeline records the email either way. Details in the{" "}
                 <a
                   href="#email"
-                  className="text-accent underline decoration-edge underline-offset-2"
+                  className={LINK_CLASS}
                 >
                   email section
                 </a>
@@ -752,7 +752,7 @@ npx convex env set RESEND_API_KEY re_... --prod  # production`}</Code>
               in the{" "}
               <a
                 href="#email"
-                className="text-accent underline decoration-edge underline-offset-2"
+                className={LINK_CLASS}
               >
                 email section
               </a>
@@ -1367,7 +1367,7 @@ curl "https://api.cloudflare.com/client/v4/zones/$ZONE_ID/dns_records" \\
               the setup prompt button on the{" "}
               <Link
                 to="/"
-                className="text-accent underline decoration-edge underline-offset-2"
+                className={LINK_CLASS}
               >
                 landing page
               </Link>{" "}
