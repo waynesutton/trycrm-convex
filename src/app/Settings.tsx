@@ -738,12 +738,14 @@ function AiSection() {
       <div className="flex gap-2">
         {(
           [
+            { id: "deepseek", label: "DeepSeek" },
             { id: "openai", label: "OpenAI" },
             { id: "anthropic", label: "Claude" },
             { id: "openrouter", label: "OpenRouter" },
+            { id: "grok", label: "Grok" },
           ] as const
         ).map((option) => {
-          const active = (aiProvider ?? "openai") === option.id;
+          const active = (aiProvider ?? "deepseek") === option.id;
           const configured = capabilities?.[option.id];
           return (
             <button

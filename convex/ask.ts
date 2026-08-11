@@ -140,10 +140,12 @@ export const providerInternal = internalQuery({
     v.literal("openai"),
     v.literal("anthropic"),
     v.literal("openrouter"),
+    v.literal("grok"),
+    v.literal("deepseek"),
   ),
   handler: async (ctx) => {
     const workspace = await ctx.db.query("workspace").first();
-    return workspace?.aiProvider ?? "openai";
+    return workspace?.aiProvider ?? "deepseek";
   },
 });
 

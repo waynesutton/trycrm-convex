@@ -9,6 +9,8 @@ const aiProviderValidator = v.union(
   v.literal("openai"),
   v.literal("anthropic"),
   v.literal("openrouter"),
+  v.literal("grok"),
+  v.literal("deepseek"),
 );
 
 export const sidebar = query({
@@ -57,7 +59,7 @@ export const aiProvider = query({
   returns: aiProviderValidator,
   handler: async (ctx) => {
     const workspace = await ctx.db.query("workspace").first();
-    return workspace?.aiProvider ?? "openai";
+    return workspace?.aiProvider ?? "deepseek";
   },
 });
 

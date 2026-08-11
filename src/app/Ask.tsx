@@ -48,6 +48,8 @@ const PROVIDER_LABELS = {
   openai: "OpenAI",
   anthropic: "Claude",
   openrouter: "OpenRouter",
+  grok: "Grok",
+  deepseek: "DeepSeek",
 } as const;
 
 export function Ask() {

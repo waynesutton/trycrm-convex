@@ -36,7 +36,7 @@ Try it at [convex.link/crmonconvex](https://convex.link/crmonconvex) (served fro
 | Brand enrichment | [`@context-dot-dev/convex`](https://www.convex.dev/components/context-dot-dev/convex), the same Context.dev data the upstream uses; the same key also backs web search and scraping |
 | Web scraping     | [`@firecrawl/firecrawl-convex`](https://www.convex.dev/components/firecrawl/firecrawl-convex) or Context.dev, the chat agent reads pages as markdown with either key                |
 | Web search       | [`@exalabs/convex-exa`](https://www.convex.dev/components/exalabs/convex-exa) or Context.dev, search as an agent tool with either key                                               |
-| AI providers     | OpenAI, Claude (Anthropic), or OpenRouter via the AI SDK, switchable in Settings, no key ships by default                                                                           |
+| AI providers     | DeepSeek, OpenAI, Claude (Anthropic), OpenRouter, or xAI Grok via the AI SDK, switchable in Settings, no key ships by default                                                       |
 | Email            | [`@convex-dev/resend`](https://www.convex.dev/components/resend) or [`@agentmail/convex`](https://www.convex.dev/components/agentmail/convex), switchable in Settings               |
 | Caching          | [`@convex-dev/action-cache`](https://www.convex.dev/components/action-cache), 7 day TTL on brand lookups, replaces Redis                                                            |
 | Rate limiting    | [`@convex-dev/rate-limiter`](https://www.convex.dev/components/rate-limiter) on the enrichment budget                                                                               |
@@ -89,9 +89,11 @@ Every outside key is optional in practice. The app degrades honestly: features t
 | `CONTEXT_DEV_API_KEY`                      | Company enrichment from Context.dev brand data, plus web search and page reading for the chat agent when the Exa or Firecrawl key is missing | Enrichment tasks complete with a "not configured" note. Set to `unset` to run keyless. |
 | `FIRECRAWL_API_KEY`                        | Chat agent reads web pages via Firecrawl. Context.dev covers this when only its key is set                                                   | The tool tells the agent which keys enable it. Set to `unset` to run keyless.          |
 | `EXA_API_KEY`                              | Chat agent searches the web via Exa. Context.dev covers this when only its key is set                                                        | Same honest degradation. Set to `unset` to run keyless.                                |
+| `DEEPSEEK_API_KEY`                         | Chat and agent reasoning on DeepSeek when it is the selected provider (the default). Optional `DEEPSEEK_API_BASE_URL` and `DEEPSEEK_MODEL`   | Chat replies name the missing key                                                      |
 | `OPENAI_API_KEY`                           | Chat and agent reasoning when OpenAI is the selected provider                                                                                | Chat replies name the missing key                                                      |
 | `ANTHROPIC_API_KEY`                        | Chat and agent reasoning when Claude is the selected provider                                                                                | Same                                                                                   |
 | `OPENROUTER_API_KEY`                       | Chat and agent reasoning when OpenRouter is the selected provider                                                                            | Same                                                                                   |
+| `GROK_API_KEY`                             | Chat and agent reasoning on Grok (xAI) when it is the selected provider. Optional `GROK_API_BASE_URL` and `GROK_MODEL`                       | Same                                                                                   |
 | `RESEND_API_KEY`                           | Outbound email through the Resend component                                                                                                  | Email sends are logged as no-ops                                                       |
 | `AGENTMAIL_API_KEY` + `AGENTMAIL_INBOX_ID` | Outbound email plus a persistent agent inbox through AgentMail                                                                               | Same, logged as no-ops                                                                 |
 | `SLACK_WEBHOOK_URL`                        | Slack notifications in simple mode: posts to one fixed channel through an incoming webhook                                                   | Slack sends are logged as no-ops                                                       |
@@ -107,7 +109,7 @@ Set any of them with:
 npx convex env set OPENAI_API_KEY sk-...
 ```
 
-None of the three AI keys ship by default. A fresh fork has no model keys at all; the Ask page and record chat answer with the exact key they need instead of erroring. Pick which provider the chat uses in Settings.
+None of the five AI keys ship by default. A fresh fork has no model keys at all; the Ask page and record chat answer with the exact key they need instead of erroring. Pick which provider the chat uses in Settings. DeepSeek is the default.
 
 Demo mode is a flag on the workspace row, set by the seed. While it is on, writes are open, sign-in is disabled, and the reset cron wipes and reseeds all tables every 10 minutes. The banner in the app counts down to the next reset. Forking this for real use? Turn it off first: see [Turning off the demo reset](#turning-off-the-demo-reset).
 

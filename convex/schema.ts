@@ -67,6 +67,8 @@ export default defineSchema({
         v.literal("openai"),
         v.literal("anthropic"),
         v.literal("openrouter"),
+        v.literal("grok"),
+        v.literal("deepseek"),
       ),
     ),
     // Sidebar personalization: item ids in display order, and ids hidden by
