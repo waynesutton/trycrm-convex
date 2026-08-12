@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.13.15] (2026-08-12)
+
+DeepSeek and Grok join the AI provider picker. Timestamp: 2026-08-12 18:18 UTC.
+
+### Added
+
+- DeepSeek is the default chat provider (`DEEPSEEK_API_KEY`, model `deepseek-v4-flash`) and Grok joins via `GROK_API_KEY` (`grok-4.5`). Both speak the OpenAI wire format, with optional `*_API_BASE_URL` and `*_MODEL` overrides. Settings, Ask, Docs, Compare, and the landing BYOK card list all five providers. No key ships by default; the chat names the missing key (`convex/ai.ts`, `src/app/Settings.tsx`)
+
 ## [2.13.14] (2026-08-11)
 
 Demo reset no longer trips the 1000 scheduled function limit. Timestamp: 2026-08-11 19:57 UTC.

@@ -208,7 +208,7 @@ I forked waynesutton/trycrm-convex and I am using it as a real CRM, not a public
 - Agent task queue with leasing, workpools, and scheduled rechecks that require a reason
 - Agents that build agents: describe a process, get a versioned draft definition
 - Record chat with web research tools (Firecrawl, Exa, or Context.dev, any one key is enough) that answer honestly about missing keys
-- AI provider picker: OpenAI, Claude, or OpenRouter, none configured by default
+- AI provider picker: DeepSeek (default), OpenAI, Claude, OpenRouter, or Grok, none configured by default
 - Dark and light themes with a toggle in the header and the sidebar footer
 - Demo reset every 10 minutes via cron (the Activity log resets with it)
 
@@ -227,7 +227,7 @@ The app has a live comparison page at `/compare` and full setup docs at `/docs`.
 | Auth            | Better Auth                             | Convex Auth ready, off in demo                                                                    |
 | Email           | Resend SDK calls                        | Resend or AgentMail components, switchable                                                        |
 | Web research    | Not included                            | Firecrawl or Context.dev scraping and Exa or Context.dev search as agent tools; any one key works |
-| AI providers    | OpenAI                                  | OpenAI, Claude, or OpenRouter, switchable in Settings                                             |
+| AI providers    | OpenAI                                  | DeepSeek (default), OpenAI, Claude, OpenRouter, or Grok, switchable in Settings                   |
 | Workspace chat  | Per-record chat only                    | Ask page with streamed replies, slash commands, and thread history                                |
 | Notes and tasks | Notes on records                        | Notes and tasks with due dates, reminders, and completion                                         |
 | Search          | Per-table inputs                        | Command-K palette on full text search indexes                                                     |

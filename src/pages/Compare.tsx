@@ -73,7 +73,7 @@ const ROWS: Array<Row> = [
     area: "AI providers",
     upstream: "OpenAI",
     convex:
-      "OpenAI, Claude, or OpenRouter, switchable in Settings. No key ships by default; the chat names the key it needs",
+      "DeepSeek (default), OpenAI, Claude, OpenRouter, or Grok, switchable in Settings. No key ships by default; the chat names the key it needs",
   },
   {
     area: "Workspace chat",

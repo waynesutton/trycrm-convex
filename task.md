@@ -2,9 +2,11 @@
 
 ## to do
 
-- Optional: set real OPENAI_API_KEY, FIRECRAWL_API_KEY, EXA_API_KEY, RESEND_API_KEY, or AGENTMAIL_API_KEY + AGENTMAIL_INBOX_ID on the deployment (CONTEXT_DEV_API_KEY is already real on prod)
+- Optional: set real DEEPSEEK_API_KEY, GROK_API_KEY, OPENAI_API_KEY, FIRECRAWL_API_KEY, EXA_API_KEY, RESEND_API_KEY, or AGENTMAIL_API_KEY + AGENTMAIL_INBOX_ID on the deployment (CONTEXT_DEV_API_KEY is already real on prod)
 
 ## completed
+
+- 2026-08-12 18:18 UTC: Added DeepSeek (default, deepseek-v4-flash) and Grok (grok-4.5) AI providers. Both use the OpenAI-compatible SDK against their own base URLs. Schema, prefs, capabilities, Settings picker, Ask labels, Docs, README, Compare, and the landing BYOK card now list all five providers. Leftover three-provider copy on landing, compare, settings integrations, and the docs env table is gone.
 
 - 2026-08-11 19:57 UTC: Fixed the demo:reset crash "Too many functions scheduled by this mutation (limit: 1000)". PRD: prds/demo-reset-scheduled-function-limit.md. Root cause: dealsByOwner was namespaced by owner user id, the ten minute reseed mints new ids every run, the aggregate component never deletes a namespace, and clearAll schedules one job per namespace, so the count crossed 1000 and every reset rolled back. dealsByOwner had zero readers, so it was removed from convex/convex.config.ts, convex/aggregates.ts, and convex/demo.ts; dealsByStage stays (six fixed stage namespaces). Verified: convex dev --once, check-types, and lint clean; npx convex run demo:reset succeeds; dashboard:summary returns correct rollups. The unmounted dealsByOwner data can be deleted from the Convex dashboard on dev and prod.
 

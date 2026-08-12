@@ -569,9 +569,11 @@ function MockByok() {
     {
       label: "Chat",
       providers: [
+        { name: "DeepSeek", envKey: "DEEPSEEK_API_KEY" },
         { name: "OpenAI", envKey: "OPENAI_API_KEY" },
         { name: "Claude", envKey: "ANTHROPIC_API_KEY" },
         { name: "OpenRouter", envKey: "OPENROUTER_API_KEY" },
+        { name: "Grok", envKey: "GROK_API_KEY" },
       ],
     },
     {
@@ -788,7 +790,7 @@ function DemoNotes() {
       key: "providers",
       body: (
         <>
-          Chat runs on OpenAI, Claude, or OpenRouter. None of those keys ship by default;{" "}
+          Chat runs on DeepSeek (the default), OpenAI, Claude, OpenRouter, or Grok. None of those keys ship by default;{" "}
           <Hl>pick a provider in Settings</Hl> and set its key on your own deployment.{" "}
           <DocsLink to="/docs#ai-providers" label="AI providers" />
         </>

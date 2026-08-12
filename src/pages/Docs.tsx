@@ -93,6 +93,13 @@ const ENV_ROWS: Array<{
     where: "exa.ai",
   },
   {
+    name: "DEEPSEEK_API_KEY",
+    required: "No",
+    enables:
+      "Chat and agent reasoning when DeepSeek is the selected provider (the default)",
+    where: "platform.deepseek.com",
+  },
+  {
     name: "OPENAI_API_KEY",
     required: "No",
     enables: "Chat and agent reasoning when OpenAI is the selected provider",
@@ -109,6 +116,12 @@ const ENV_ROWS: Array<{
     required: "No",
     enables: "Chat and agent reasoning when OpenRouter is the selected provider",
     where: "openrouter.ai",
+  },
+  {
+    name: "GROK_API_KEY",
+    required: "No",
+    enables: "Chat and agent reasoning when Grok is the selected provider",
+    where: "console.x.ai",
   },
   {
     name: "RESEND_API_KEY",

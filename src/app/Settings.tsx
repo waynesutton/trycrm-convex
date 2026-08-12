@@ -142,6 +142,12 @@ function IntegrationsSection() {
             docsId="web-research"
           />
           <IntegrationRow
+            name="DeepSeek"
+            detail="Set DEEPSEEK_API_KEY to run chat on DeepSeek (the default provider)."
+            configured={capabilities?.deepseek}
+            docsId="ai-providers"
+          />
+          <IntegrationRow
             name="OpenAI"
             detail="Set OPENAI_API_KEY to enable chat and agent reasoning."
             configured={capabilities?.openai}
@@ -157,6 +163,12 @@ function IntegrationsSection() {
             name="OpenRouter"
             detail="Set OPENROUTER_API_KEY to route chat through OpenRouter."
             configured={capabilities?.openrouter}
+            docsId="ai-providers"
+          />
+          <IntegrationRow
+            name="Grok (xAI)"
+            detail="Set GROK_API_KEY to run chat on Grok."
+            configured={capabilities?.grok}
             docsId="ai-providers"
           />
           <IntegrationRow
@@ -735,7 +747,7 @@ function AiSection() {
         </TextLink>{" "}
         for the setup steps.
       </p>
-      <div className="flex gap-2">
+      <div className="flex flex-wrap gap-2">
         {(
           [
             { id: "deepseek", label: "DeepSeek" },

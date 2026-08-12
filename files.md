@@ -40,7 +40,7 @@ Brief description of what each file does. Updated 2026-08-09 19:55 UTC.
 | `enrichment.ts` | Context.dev brand lookup with action cache and rate limiter, writes facts and timeline entries |
 | `chat.ts` | Record chat on the agent component, with read_crm_history, search_the_web (Exa), and read_web_page (Firecrawl) tools; runs on the workspace's selected AI provider |
 | `ask.ts` | Workspace-wide Ask chat: threads with archive and delete, CRM overview tool, web research tools, streamed provider-aware generation, /task and /note slash commands with relative and explicit due date parsing |
-| `ai.ts` | AI provider registry: OpenAI, Anthropic, OpenRouter models, key checks, and the missing-key reply |
+| `ai.ts` | AI provider registry: DeepSeek (default), OpenAI, Anthropic, OpenRouter, and Grok models, key checks, and the missing-key reply |
 | `prefs.ts` | Workspace preferences: sidebar order and hidden items, AI provider |
 | `logs.ts` | Activity log: record helper for mutations and actions, list query, clear and clearMany mutations |
 | `search.ts` | Command-K global search on full text `search_name` indexes with a bounded scan fallback for domains and emails |
